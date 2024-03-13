@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<navigation-bar title="大程序~很大很大的程序" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+  <text style="color: red;">(第一次使用请先点击获取token按钮)</text><br/>
+  <text style="color: rgb(0, 47, 255);">20990685</text><br/>
+  <text style="color: rgb(255, 0, 234);">朱帅奇</text><br/>
+    <view>
+      <button bindtap="get_access_token">获取token</button>
+      <button bindtap="get_image">上传图片</button>
+      <image src="{{imageUrl}}"></image>
+      <button bindtap="recognition">识别图片</button>
+    </view>
+    <text style="color: red;">{{tokenInfo}}</text>
+  </view>
+</scroll-view>
+
+<!-- 识别结果弹窗 -->
+<view class="mask" hidden="{{!isShow}}" bindtap="hideModal"></view>
+<view class="mask_content" hidden="{{!isShow}}">
+  <view class="mask_title">识别结果如下</view>
+  <block wx:for="{{results}}" wx:key="index">
+    <view class="mask_item">{{item.keyword}} - 相似度：{{item.score}} - {{item.root}}</view>
+  </block>
+</view>

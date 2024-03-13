@@ -1,0 +1,57 @@
+.photo-view {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.takePhoto {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  background-color: #00cc77;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 识别出的结果 */
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.5;
+  background: black;
+  /* 设置组件的层级 */
+  z-index: 100;
+}
+
+.mask_content {
+  position: fixed;
+  left: 80rpx;
+  top: 200rpx;
+  right: 80rpx;
+  height: 600rpx;
+  background: white;
+  z-index: 200;
+  overflow: auto;
+}
+
+.mask_title {
+  text-align: center;
+  font-size: 50rpx;
+  color: red;
+  margin-bottom: 20rpx;
+}
+
+.mask_item {
+  text-align: center;
+  padding: 15rpx;
+  border-bottom: 1px solid gainsboro;
+}
